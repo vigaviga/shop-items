@@ -1,11 +1,11 @@
 .button-container {
     display:flex;
     justify-content: flex-end;
-    margin-top: 1%;
+    margin: 1% 4% 0 0;
 }
 
 .title {
-    text-align:center;
+    text-align: center;
 }
 
 .detail-container {
@@ -16,7 +16,7 @@
 }
 
 .create-item-container {
-    margin-top:2%;
+    margin:2% 0 0 2%;
     width:100%;
 }
 
