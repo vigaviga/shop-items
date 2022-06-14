@@ -3,12 +3,12 @@ import CreateShopItem from './components/CreateShopItem.coponent';
 import ShopItems from './components/ShopItems.component';
 import Button from '@mui/material/Button';
 import ShopListItem from './components/ShopListItem.component'
-
+import shortid from 'shortid'
 
 function App() {
   let item = [
     {
-      id: 1,
+      id: shortid.generate(),
       Name: "banan1",
       Price: "1001",
       Weight: 101,
@@ -16,7 +16,7 @@ function App() {
       EndDate: new Date(3)
     },
     {
-      id: 2,
+      id: shortid.generate(),
       Name: "banan2",
       Price: "1002",
       Weight: 102,
@@ -24,7 +24,25 @@ function App() {
       EndDate: new Date(5)
     },
     {
-      id: 3,
+      id: shortid.generate(),
+      Name: "bana3n",
+      Price: "1003",
+      Weight: 104,
+      StartDate: new Date(4),
+      EndDate: new Date(7)
+    }
+    ,
+    {
+      id: shortid.generate(),
+      Name: "bana3n",
+      Price: "1003",
+      Weight: 104,
+      StartDate: new Date(4),
+      EndDate: new Date(7)
+    }
+    ,
+    {
+      id: shortid.generate(),
       Name: "bana3n",
       Price: "1003",
       Weight: 104,
@@ -34,7 +52,7 @@ function App() {
   ]
 
   return (
-    <div>
+    <div className='container'>
       <div className='create-container'>
         <div className='header-container'>
           <h3 className='title'>Create Shop Items</h3>
@@ -42,7 +60,9 @@ function App() {
         </div>
         <CreateShopItem />
       </div>
-      <ShopItems shopItems = {item}/>
+      <div className='created-items-container'>
+        <ShopItems shopItems = {item}/>
+      </div>
 
     </div>
   );
