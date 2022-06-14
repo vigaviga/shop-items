@@ -1,0 +1,22 @@
+.button-container {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 1%;
+}
+
+.title {
+    text-align:center;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    width:100%;
+}
+
+.create-item-container {
+    margin-top:2%;
+    width:100%;
+}
+
