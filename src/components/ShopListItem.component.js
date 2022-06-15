@@ -2,11 +2,11 @@ import React from 'react';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
-import './ShopListItem.styles.css';
+ 
 
 import './ShopListItem.styles.css';
 
-function ShopListItem({ item }) {
+function ShopListItem({item} ) {
     return (<div className='list-item-container'>
         <List>
             <ListItem>
@@ -19,10 +19,10 @@ function ShopListItem({ item }) {
                 <ListItemText key={item.id + item.Weight} primary={item.Weight} />
             </ListItem>
             <ListItem>
-                <ListItemText key={item.id + item.StartDate.getMilliseconds()} primary={item.StartDate.toDateString()} />
+                <ListItemText key={item.id + item.StartDate+1} primary={item.StartDate} />
             </ListItem>
             <ListItem>
-                <ListItemText key={item.id + item.EndDate.getMilliseconds()} primary={item.EndDate.toDateString()} />
+                <ListItemText key={item.id + item.EndDate + 2} primary={item.EndDate} />
             </ListItem>
         </List>
     </div>)
