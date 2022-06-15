@@ -1,0 +1,17 @@
+  .create-container {
+    display: flex;  
+    flex-direction: column;
+    width:450px;
+  }
+  .header-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .container {
+    display:flex;
+  }
+  .created-items-container{
+    width:70%;
+  }

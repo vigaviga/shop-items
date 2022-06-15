@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useSelector, useDispatch } from 'react-redux'
-import { addShopItemsToAdd } from './createSlice';
+import { addShopItemsToAdd } from '../createSlice';
 import shortid from 'shortid'
 
 import './CreateShopItem.styles.css'
