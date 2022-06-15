@@ -18,10 +18,10 @@ function CreateShopItem() {
     const [weight, setWeight] = useState("");
     const [weightInvalid, setWeightInvalid] = useState(false);
 
-    const [startDate, setStartDate] = useState(new Date(-8640000000000000));
+    const [startDate, setStartDate] = useState("");
     const [startDateInvalid, setStartDateInvalid] = useState(false);
 
-    const [endDate, setEndDate] = useState(new Date(-8640000000000000));
+    const [endDate, setEndDate] = useState("");
     const [endDateInvalid, setEndDateInvalid] = useState(false);
 
     const nameRef = React.useRef(null);
@@ -60,11 +60,11 @@ function CreateShopItem() {
             setNameInvalid(true);
         }
 
-        if ((new Date(startDate)).toDateString() == new Date(-8640000000000000).toDateString()) {
+        if (startDate === "") {
             setStartDateInvalid(true);
         }
 
-        if ((new Date(endDate)).toDateString() == new Date(-8640000000000000).toDateString()) {
+        if (endDate === "") {
             setEndDateInvalid(true);
         }
     }
@@ -73,13 +73,13 @@ function CreateShopItem() {
         setName("");
         setPrice("")
         setWeight("");
-        setStartDate(new Date(-8640000000000000));
-        setEndDate(new Date(-8640000000000000));
+        setStartDate("");
+        setEndDate("");
         nameRef.current.value = "";
         priceRef.current.value = "";
         weightRef.current.value = "";
-        startDateRef.current.value = new Date(-8640000000000000);
-        endDateRef.current.value = new Date(-8640000000000000);
+        startDateRef.current.value = "";
+        endDateRef.current.value = "";
 
     }
     const handleSubmit = (e) => {
@@ -87,8 +87,9 @@ function CreateShopItem() {
 
         setTextFieldsValid();
         validateFields();
-
-        if (name && price && weight && startDate != new Date(-8640000000000000) && endDate != new Date(-8640000000000000)) {
+        console.log(startDate);
+        console.log(endDate);
+        if (name && price && weight && startDate && endDate) {
             const shopItemToAdd = {
                 id: shortid.generate(),
                 Name: name,
@@ -98,8 +99,8 @@ function CreateShopItem() {
                 EndDate: endDate
             }
             dispatch(addShopItemsToAdd(shopItemToAdd));
+            setDefaultValues();
         }
-        setDefaultValues();
     }
 
     return (<div>
@@ -123,6 +124,7 @@ function CreateShopItem() {
                         <TextField
                             required
                             id="outlined-required"
+                            type="number"
                             inputRef = {priceRef}
                             label="Required"
                             placeholder="Price"
@@ -135,6 +137,7 @@ function CreateShopItem() {
                         <TextField
                             required
                             id="outlined-required"
+                            type="number"
                             inputRef = {weightRef}
                             label="Required"
                             placeholder="Weight"
