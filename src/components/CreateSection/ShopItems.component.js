@@ -9,7 +9,7 @@ function ShopItems(){
 
     return(
         <div className='shop-items-container'>
-            {Array.isArray(shopItems) ? shopItems.map(shopItem => <ShopListItem item={shopItem}/>) : null}
+            {shopItems.map(shopItem => <ShopListItem item={shopItem}/>)}
         </div>
     )
 }

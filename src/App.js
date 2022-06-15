@@ -1,11 +1,10 @@
-import CreateSection from './components/CreateSection/CreateSection.component'
-
 import './App.css';
+import MainComponent from './components/Main.component';
 
 function App() {
   return (
-    <div>
-      <CreateSection />
+    <div >
+      {<MainComponent />}
     </div>
   );
 }
